@@ -17,8 +17,6 @@ class Backend extends AbstractController
             $data[] = $row;
         }
 
-        $data = array_slice($data, 0, count($data) - 20);
-
         // Encode & return
         return new Response(json_encode($data));
     }
