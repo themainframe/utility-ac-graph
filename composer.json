@@ -1,0 +1,21 @@
+{
+    "name": "themainframe/veto-skeleton",
+    "description": "A basic skeleton installation for the Veto framework.",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "themainframe/veto": "dev-master",
+        "twig/twig" : "1.*"
+    },
+    "require-dev": {
+        "andres-montanez/magallanes": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Damien Walsh",
+            "email": "me@damow.net"
+        }
+    ],
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,19 @@
+{
+    "routes": {
+
+        "graph": {
+            "url": "/",
+            "controller": "controller.frontend",
+            "action": "showGraph",
+            "methods": ["GET"]
+        },
+
+        "data": {
+            "url": "/data",
+            "controller": "controller.backend",
+            "action": "getData",
+            "methods": ["GET"]
+        }
+
+    }
+}

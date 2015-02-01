@@ -1,0 +1,20 @@
+{
+  "name": "ac-statistics",
+  "version": "0.0.1",
+  "directory": "web/js",
+  "authors": [
+    "Damien Walsh <me@damow.net>"
+  ],
+  "description": "AC statistics grapher",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Flot": "flot/flot#~0.8.3"
+  }
+}

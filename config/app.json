@@ -1,0 +1,13 @@
+{
+    "parameters": {
+
+        "veto": "awesome"
+
+    },
+
+    "@import": [
+        "layers.json",
+        "routes.json",
+        "services.json"
+    ]
+}

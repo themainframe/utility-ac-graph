@@ -1,0 +1,5 @@
+/vendor/
+.idea
+.mage
+/data/
+/web/js/

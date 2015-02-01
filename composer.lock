@@ -1,0 +1,157 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "e3b90333f95fbb8b149cf98b59f735e2",
+    "packages": [
+        {
+            "name": "themainframe/veto",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/themainframe/veto.git",
+                "reference": "7f274bdee74d6c97f638046a868ccee1960fb2c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/themainframe/veto/zipball/7f274bdee74d6c97f638046a868ccee1960fb2c5",
+                "reference": "7f274bdee74d6c97f638046a868ccee1960fb2c5",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Veto": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Damien Walsh",
+                    "email": "me@damow.net"
+                }
+            ],
+            "description": "Veto is a super-lightweight PHP framework to make building web applications easier.",
+            "time": "2014-12-02 22:51:04"
+        },
+        {
+            "name": "twig/twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "74a8bddec4e8fbea8b3f497bc7cc4bdf1a498330"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/74a8bddec4e8fbea8b3f497bc7cc4bdf1a498330",
+                "reference": "74a8bddec4e8fbea8b3f497bc7cc4bdf1a498330",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.18-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2015-01-30 11:04:23"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "andres-montanez/magallanes",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andres-montanez/Magallanes.git",
+                "reference": "bb9e842bd572f8772c6b5c4491c97ed79a3af5cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andres-montanez/Magallanes/zipball/bb9e842bd572f8772c6b5c4491c97ed79a3af5cf",
+                "reference": "bb9e842bd572f8772c6b5c4491c97ed79a3af5cf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "bin": [
+                "bin/mage"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mage\\": "./Mage",
+                    "Task\\": [
+                        ".mage/tasks",
+                        "../../../.mage/tasks"
+                    ],
+                    "Command\\": [
+                        ".mage/tasks",
+                        "../../../.mage/commands"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Deployment Tool for PHP Applications",
+            "homepage": "http://magephp.com",
+            "keywords": [
+                "deployment"
+            ],
+            "time": "2015-01-24 15:12:37"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "themainframe/veto": 20,
+        "andres-montanez/magallanes": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
