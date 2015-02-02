@@ -5,87 +5,7 @@
         <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-        <script src="js/jquery/dist/jquery.min.js"></script>
-        <script src="js/Flot/jquery.flot.js"></script>
-        <script src="js/Flot/jquery.flot.resize.js"></script>
-        <script src="js/Flot/jquery.flot.time.js"></script>
-        <script src="js/Flot/jquery.flot.navigate.js"></script>
-        <script src="js/Flot/jquery.flot.selection.js"></script>
-        <script type="text/javascript">
 
-            jQuery(function() {
-
-                var dimensions = {
-                    2: {
-                        'label': 'Minimum Utility Voltage',
-                        'data': []
-                    },
-                    3: {
-                        'label': 'Maximum Utility Voltage',
-                        'data': []
-                    },
-                    4: {
-                        'label': 'UPS Output Voltage',
-                        'data': []
-                    }
-                };
-
-                // Define the chart options
-                var options = {
-                    xaxis: {
-                        mode: 'time'
-                    },
-                    selection: { mode: "xy" },
-                    legend: { noColumns: 6 }
-                };
-
-                //
-                // Retrieve data and render the history chart
-                //
-                $.getJSON('data', function(data) {
-
-                    var chartHolder = $("#history-chart");
-
-                    $.each(data, function(rIndex, point) {
-
-                        // Add a data point ot each dimension
-                        $.each(dimensions, function(dIndex, dimension) {
-                            dimension.data.push([new Date(point[0] + ' ' + point[1]), point[dIndex]]);
-                        });
-
-                    });
-
-                    var plotDimensions = [];
-                    $.each(dimensions, function(dIndex, dimension) {
-                        plotDimensions.push(dimension);
-                    });
-
-                    console.log(plotDimensions);
-
-                    // Render the chart
-                    plot = $.plot(chartHolder, plotDimensions, options);
-
-                    // Handle selection changes/zooming
-                    chartHolder.bind("plotselected", function (event, ranges) {
-                        // do the zooming
-                        plot = $.plot(chartHolder, plotDimensions,
-                                $.extend(true, {}, options, {
-                                    xaxis: { min: ranges.xaxis.from, max: ranges.xaxis.to },
-                                    yaxis: { min: ranges.yaxis.from, max: ranges.yaxis.to }
-                                })
-                        );
-                    }).bind("plotunselected", function() {
-                        plot = $.plot(chartHolder, plotDimensions, options);
-                    });
-
-                });
-
-
-            });
-
-
-        </script>
         <style type="text/css">
 
             html {
@@ -133,6 +53,99 @@
             <p class="text-muted">&copy; Damien Walsh 2015 - Powered by <a href="http://github.com/themainframe/veto">Veto</a>.</p>
         </div>
     </footer>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="js/jquery/dist/jquery.min.js"></script>
+    <script src="js/Flot/jquery.flot.js"></script>
+    <script src="js/Flot/jquery.flot.resize.js"></script>
+    <script src="js/Flot/jquery.flot.time.js"></script>
+    <script src="js/Flot/jquery.flot.navigate.js"></script>
+    <script src="js/Flot/jquery.flot.selection.js"></script>
+    <script type="text/javascript">
+
+        jQuery(function() {
+
+            //
+            // Retrieve data and render the history chart
+            //
+            $.getJSON('data', function(data) {
+
+                var dimensions = {
+                    2: {
+                        'label': 'Minimum Utility Voltage',
+                        'data': []
+                    },
+                    3: {
+                        'label': 'Maximum Utility Voltage',
+                        'data': []
+                    },
+                    4: {
+                        'label': 'UPS Output Voltage',
+                        'data': []
+                    }
+                };
+
+                // Define the chart options
+                var options = {
+                    xaxis: {
+                        mode: 'time'
+                    },
+                    selection: { mode: "xy" },
+                    legend: { noColumns: 6 }
+                };
+
+
+                var chartHolder = $("#history-chart");
+
+                $.each(data, function(rIndex, point) {
+
+                    // Add a data point ot each dimension
+                    $.each(dimensions, function(dIndex, dimension) {
+
+                        if (dimension == undefined) {
+                            return true;
+                        }
+
+                        dimension.data.push([new Date(point[0] + ' ' + point[1]), point[dIndex]]);
+                    });
+
+                });
+
+                var plotDimensions = [];
+                $.each(dimensions, function(dIndex, dimension) {
+
+                    if (dimension == undefined) {
+                        return true;
+                    }
+
+                    plotDimensions.push(dimension);
+                });
+
+                console.log(plotDimensions);
+
+                // Render the chart
+                plot = $.plot(chartHolder, plotDimensions, options);
+
+                // Handle selection changes/zooming
+                chartHolder.bind("plotselected", function (event, ranges) {
+                    // do the zooming
+                    plot = $.plot(chartHolder, plotDimensions,
+                            $.extend(true, {}, options, {
+                                xaxis: { min: ranges.xaxis.from, max: ranges.xaxis.to },
+                                yaxis: { min: ranges.yaxis.from, max: ranges.yaxis.to }
+                            })
+                    );
+                }).bind("plotunselected", function() {
+                    plot = $.plot(chartHolder, plotDimensions, options);
+                });
+
+            });
+
+
+        });
+
+
+    </script>
 
     </body>
 </html>
