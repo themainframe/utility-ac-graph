@@ -72,16 +72,21 @@
 
                 var dimensions = {
                     2: {
+                        'color': '#0b90dd',
                         'label': 'Minimum Utility Voltage',
                         'data': []
                     },
                     3: {
                         'label': 'Maximum Utility Voltage',
-                        'data': []
+                        'data': [],
+                        'color': '#dd550b'
                     },
                     4: {
                         'label': 'UPS Output Voltage',
-                        'data': []
+                        'data': [],
+                        'color': '#dfdfdf',
+                        'shadowSize': 1,
+                        'width': '1px'
                     }
                 };
 
@@ -91,7 +96,12 @@
                         mode: 'time'
                     },
                     selection: { mode: "xy" },
-                    legend: { noColumns: 6 }
+                    legend: { noColumns: 6 },
+                    series: {
+                        lines: {
+                            lineWidth: 1
+                        }
+                    }
                 };
 
 
